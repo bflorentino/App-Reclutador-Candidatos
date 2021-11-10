@@ -1,0 +1,104 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Candidate Recruiter</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+</head>
+
+<body>
+
+<style>
+    body {
+        background-color: #282C35;
+    }
+
+    .navbar {
+        background: rgba(0,0,0,0.5);
+    }
+
+    .desplegable {
+        display: none;
+        opacity: 0;
+        top: 100%;
+        padding: 0;
+        list-style: none;
+        text-decoration: none;
+        transition: opacity 1.5s;
+    }
+
+     .desplegable li {
+        width: 150px;
+      }
+
+      .desplegable li a {
+         line-height: 120%;
+         padding: 10px 15px;
+       }
+
+    ul li:hover ul {
+        display: block;
+        opacity: 1;
+    }
+
+/*    .intento {
+        position: relative;
+        font-weight: bold;
+    }*/
+
+</style>
+
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light box-shadow mb-3">
+            <div class="container">
+                <a class="navbar-brand text-white" asp-area="" asp-controller="Reclutadora" asp-action="Index">ITjobsForYou.Net</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
+                    <ul class="navbar-nav flex-grow-1">
+                        <li class="nav-item">
+                            <a class="nav-link text-white" asp-area="" asp-controller="Reclutadora" asp-action="Index">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="#">Registrar</a>
+                            <ul class="desplegable navbar-nav flex-grow-1">
+                                <li>
+                                    <a class="nav-link text-white" asp-area="" asp-controller="Reclutadora" asp-action="PuestosForm">Nuevo Puesto</a>
+                                </li>
+                                <li>
+                                    <a class="nav-link text-white" asp-area="" asp-controller="Reclutadora" asp-action="CandidatosForm">Nuevo Candidato</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" asp-area="" asp-controller="Reclutadora" asp-action="ViewCandidatos">Ver Candidatos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" asp-area="" asp-controller="Reclutadora" asp-action="ViewPuestos">Ver Puestos</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    @*<footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2021 - Candidate_Recruiter - <a asp-area="" asp-controller="" asp-action="Privacy">Privacy</a>
+        </div>
+    </footer>*@
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

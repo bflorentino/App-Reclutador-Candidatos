@@ -1,0 +1,47 @@
+﻿@model IEnumerable<Candidate_Recruiter.Models.Puesto>
+
+@{
+    ViewData["Title"] = "ViewPuestos";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<link href="/css/ViewPuestos.css"  rel="stylesheet" />
+
+<h1 class="titulo">Puestos Laborales</h1>
+
+<section class="Puestos-Laborales">
+
+    @{
+        var posicion = -1;
+
+        foreach (var item in Model)
+        {
+            posicion += 1;
+
+            <article class="Descripcion-Puesto">
+
+                <img src="/IMg/Cargop.png" alt="Alternate Text" class="cargoIcono" />
+
+                <dl>
+                    <dt>Cargo:</dt>
+                    <dd>@Html.DisplayFor(modelItem => item.Nombre)</dd>
+                    <dt>Salario:</dt>
+                    <dd>@Html.DisplayFor(modelItem => item.Salario)</dd>
+                    <dt>Status:</dt>
+                    <dd>@Html.DisplayFor(modelItem => item.Status)</dd>
+                </dl>
+
+                @Html.ActionLink("Editar cargo", "EditPuesto", "Reclutadora", new { posicion }, new { @class = "btn-editar" })
+
+                <br />
+                <br />
+
+            </article>
+        }
+    }
+
+    <h3 style="font-size: 16px; color: #E5E5E6;">@ViewBag.mensaje</h3>
+
+</section>
+
+    

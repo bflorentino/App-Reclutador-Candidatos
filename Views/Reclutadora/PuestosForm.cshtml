@@ -1,0 +1,52 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+<link href="~/css/FormStyles.css" rel="stylesheet" />
+
+<div class="wrapper">
+
+    <section class="Banner">
+
+        <img src="/IMg/Puestolaboral.jpg" alt="Alternate Text" class="puestol1" />
+        <img src="/IMg/PuestoL2.jpg" alt="Alternate Text" class="puestol2" />
+        <img src="/IMg/puestol3.jpg" alt="Alternate Text" class="puestol1" />
+
+    </section>
+
+    <section class="form-container">
+
+        <form action="ProcessPuestosForm" method="post" class="formulario-registro">
+
+            <h1>Nuevo puesto laboral</h1>
+
+            <div class="input-text">
+                <input type="text" class="txt" name="codigo" placeholder="Agregue un codigo para el puesto" required />
+            </div>
+
+            <div class="input-text">
+                <input type="text" class="txt"  name="puesto" placeholder="Agregue el nombre del puesto" required />
+            </div>
+
+            <div class="input-text">
+                <input type="number"class="txt" min="1000" max="10000000" step="0.001" name="salario" placeholder="Agregue el salario" required />
+            </div>
+
+            <div class="input-text">
+                <select name="status"  value="Status" class="txt status" required>
+                    <option value="">Status del puesto</option>
+                    <option value="Ocupado">Ocupado</option>
+                    <option value="Vacante">Vacante</option>
+                </select>
+            </div>
+
+            <div class="submit-input">
+                <input type="submit" name="Registrar" value="Registrar puesto" id="open" />
+            </div>
+
+        </form>
+
+    </section>
+</div>

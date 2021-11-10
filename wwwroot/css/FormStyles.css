@@ -1,0 +1,96 @@
+﻿
+.wrapper {
+    height: 700px;
+    background-color: #ffffff;
+    margin: auto;
+    width: 100%;
+    border-radius: 15px;
+}
+
+.Banner {
+    float: left;
+    width: 50%;
+    height: 100%;
+}
+
+img {
+    width: 50%;
+    height: 160px;
+    border-radius: 50%;
+}
+
+.puestol1 {
+    margin: 25px;
+}
+
+.puestol2 {
+    margin: 25px 150px;
+}
+
+.form-container {
+    float: left;
+    width: 50%;
+}
+
+.formulario-registro {
+    margin: 130px 75px;
+    font: 62.5% Open Sans, Freesans, sans-serif;
+}
+
+    .formulario-registro h1 {
+        line-height: 1.2;
+        text-align: center;
+        color: #333333;
+        font-weight: 700;
+        letter-spacing: -1px;
+        font-size: 32px;
+    }
+
+    .formulario-registro input {
+        border: none;
+        margin: 0;
+    }
+
+    .formulario-registro .input-text {
+        overflow: hidden;
+        margin: 2em 0;
+    }
+
+    .formulario-registro .txt {
+        padding: 1.2em 1.2em 1.2em 0;
+        font-size: 1.4em;
+        background: #E6E6E6;
+        width: 400px;
+        border-radius: 25px;
+        padding-left: 15px;
+        outline: none;
+    }
+
+    .formulario-registro .txt:focus {
+        outline: 0;
+    }
+
+select option {
+    border: none;
+    box-shadow: none;
+    outline: none;
+    width: 350px;
+}
+
+.formulario-registro input[type="submit"] {
+    border: none;
+    background: #57B846;
+    color: #FFFFFF;
+    font-size: 1.6em;
+    padding: 0.7em 1.2em;
+    opacity: 1;
+    transition: opacity .5s ease-in-out;
+    margin-left: 100px;
+    width: 400px;
+    margin: auto;
+    border-radius: 25px;
+}
+
+    .formulario-registro input[type="submit"]:hover {
+        opacity: 0.8;
+    }

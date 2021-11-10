@@ -1,0 +1,47 @@
+﻿@model IEnumerable<Candidate_Recruiter.Models.IObserver>
+
+@{
+    ViewData["Title"] = "ViewCandidatos";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<link href="/css/ViewCandidatos.css"  rel="stylesheet" />
+
+<h1 class="titulo">Candidatos</h1>
+
+<section class="Puestos-Laborales">
+
+    @{
+        var posicion = -1;
+
+        foreach (var item in Model)
+        {
+            posicion += 1;
+
+            <article class="Descripcion-Puesto">
+
+                <img src="/IMg/user.jpg" alt="Alternate Text" class="cargoIcono" />
+
+                <dl>
+                    <dt>Cedula:</dt>
+                    <dd>@Html.DisplayFor(modelItem => item.Cedula)</dd>
+                    <dt>Nombre:</dt>
+                    <dd>@Html.DisplayFor(modelItem => item.Nombre)</dd>
+                    <dt>Correo Electronico:</dt>
+                    <dd>@Html.DisplayFor(modelItem => item.Correo)</dd>
+                    <dt>Aspiracion Salarial:</dt>
+                    <dd>@Html.DisplayFor(modelItem => item.AspiracionSalarialMinima)</dd>
+                </dl>
+
+                @Html.ActionLink("Suscribir a puesto", "SuscripcionPuesto", "Reclutadora", new { posicion }, new { @class = "btn-editar" })
+                <br />
+                <br />
+                @Html.ActionLink("Desuscribir de puesto", "DesuscripcionPuesto", "Reclutadora", new { posicion }, new { @class = "btn-desuscribir" })
+            </article>
+        }
+    }
+
+    <h3 style="font-size: 16px; color: #E5E5E6;">@ViewBag.mensaje</h3>
+ 
+
+</section>

@@ -1,0 +1,42 @@
+﻿@model IEnumerable<Candidate_Recruiter.Models.Puesto>
+
+@{
+    ViewData["Title"] = "ProcessSuscripcion";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<link href="/css/ViewPuestos.css" rel="stylesheet" />
+
+<h1 class="titulo">Puestos a los que no está suscrito este candidato</h1>
+
+<section class="Puestos-Laborales">
+
+    @{foreach (var item in Model)
+        {
+            <article class="Descripcion-Puesto">
+                <dl>
+                    <dt>Cargo:</dt>
+                    <dd>@Html.DisplayFor(modelItem => item.Nombre)</dd>
+                    <dt>Salario:</dt>
+                    <dd>@Html.DisplayFor(modelItem => item.Salario)</dd>
+                    <dt>Status:</dt>
+                    <dd>@Html.DisplayFor(modelItem => item.Status)</dd>
+                </dl>
+
+                @Html.ActionLink("Suscribirme", "ProcessSuscripcion", "Reclutadora", new { codigo = item.Codigo, posicion = ViewBag.posicion }, new { @class = "btn-editar", id = "open" })
+
+                <br />
+                <br />
+
+            </article>
+        }
+    }
+
+
+
+
+</section>
+
+    <h3 style="font-size: 16px; color: #E5E5E6;">@ViewBag.mensaje</h3>
+
+

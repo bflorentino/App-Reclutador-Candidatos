@@ -1,0 +1,80 @@
+﻿@model Candidate_Recruiter.Models.Puesto
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+
+<style>
+
+    h1 {
+        text-align: center;
+        font-size: 26px;
+        color: #E5E5E6;
+    }
+
+    .formulario-edicion{
+        margin: auto;
+        width:80%;
+        height: 400px;
+    }
+
+    form{
+        margin-left: 180px;
+    }
+
+    .input-text{
+        margin: 20px 0px 20px 0px;
+        width: 80%;
+    }
+
+    .input-text input, select {
+        height: 30px;
+        width: 80%;
+    }
+
+     input[type="submit"] {
+        margin-left: 180px;
+    }
+
+</style>
+
+
+<div class="formulario-edicion">
+
+    <h1>Edicion de puesto</h1>
+
+    <form action="ProcessEditPuesto" method="post">
+
+        <div class="input-text">
+            <input type="text" name="codigo" value="@Model.Codigo" readonly/>
+        </div>
+
+        <div class="input-text">
+            <input type="text" name="puesto" value="@Model.Nombre" readonly />
+        </div>
+
+        <div class="input-text">
+            <input type="text" name="salario" value="@Model.Salario" required />
+        </div>
+
+        <div class="input-text">
+            <select name="status" value="Status" class="status" required>
+                <option value="">Status del puesto</option>
+                <option value="Ocupado">Ocupado</option>
+                <option value="Vacante">Vacante</option>
+            </select>
+        </div>
+
+        <div class="input-text">
+            <input type="hidden" name="posicion" value="@ViewBag.posicion" />
+        </div>
+
+        <div class="submit-input">
+            <input type="submit" name="Registrar" value="Editar puesto" id="open" />
+        </div>
+    </form>
+</div>
+
+
